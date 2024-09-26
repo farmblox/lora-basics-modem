@@ -77,6 +77,7 @@ fn find_smtc_include_paths(lbm_dir: &str) -> Vec<String> {
     let include_dirs = vec![
         format!("{lbm_dir}/smtc_modem_core/radio_drivers/sx126x_driver/src"),
         format!("{lbm_dir}/smtc_modem_core/smtc_ral/src"),
+        format!("{lbm_dir}/smtc_modem_hal/"),
     ];
 
     include_dirs
