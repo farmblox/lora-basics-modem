@@ -1,0 +1,12 @@
+[package]
+name = "lbm_rust"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+bindgen = "0.70.1"
+
+[dependencies]
+cortex-m-rt = "0.7.3"
+panic-reset = "0.1.1"
+

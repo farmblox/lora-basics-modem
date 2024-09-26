@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "lbm_rust",
+]
+resolver = "2"
