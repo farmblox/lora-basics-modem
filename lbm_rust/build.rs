@@ -66,9 +66,15 @@ fn find_smtc_headers(lbm_dir: &str) -> Vec<PathBuf> {
 
     // remove headers for radios we do not use
     headers.retain(|header| header.file_name().unwrap() != "ral_lr11xx_bsp.h");
+    headers.retain(|header| header.file_name().unwrap() != "ralf_lr11xx_bsp.h");
     headers.retain(|header| header.file_name().unwrap() != "ral_sx127x_bsp.h");
+    headers.retain(|header| header.file_name().unwrap() != "ralf_sx127x_bsp.h");
     headers.retain(|header| header.file_name().unwrap() != "ral_sx128x_bsp.h");
+    headers.retain(|header| header.file_name().unwrap() != "ralf_sx128x_bsp.h");
     headers.retain(|header| header.file_name().unwrap() != "ral_llcc68_bsp.h");
+    headers.retain(|header| header.file_name().unwrap() != "ralf_llcc68_bsp.h");
+    headers.retain(|header| header.file_name().unwrap() != "smtc_modem_hal_dbg_trace.h");
+    headers.retain(|header| header.file_name().unwrap() != "smtc_modem_geolocation_api.h");
 
     headers
 }
@@ -77,6 +83,8 @@ fn find_smtc_include_paths(lbm_dir: &str) -> Vec<String> {
     let include_dirs = vec![
         format!("{lbm_dir}/smtc_modem_core/radio_drivers/sx126x_driver/src"),
         format!("{lbm_dir}/smtc_modem_core/smtc_ral/src"),
+        format!("{lbm_dir}/smtc_modem_core/smtc_ralf/src"),
+        format!("{lbm_dir}/smtc_modem_api/"),
         format!("{lbm_dir}/smtc_modem_hal/"),
     ];
 
