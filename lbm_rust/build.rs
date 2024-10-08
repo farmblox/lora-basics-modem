@@ -107,10 +107,6 @@ fn make_clean(lbm_dir: &str) {
 fn make_build(lbm_dir: &str) {
     if !Command::new("make")
         .current_dir(lbm_dir)
-        .env("DEBUG", "yes")
-        .env("LBM_FUOTA", "yes")
-        .env("LBM_DEVICE_MANAGEMENT", "yes")
-        .env("LBM_MULTICAST", "yes")
         .env(
             "MCU_FLAGS",
             "-mcpu=cortex-m4 -mthumb -mabi=aapcs -mfpu=fpv4-sp-d16 -mfloat-abi=hard",
