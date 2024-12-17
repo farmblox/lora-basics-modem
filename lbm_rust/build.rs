@@ -107,10 +107,7 @@ fn make_clean(lbm_dir: &str) {
 fn make_build(lbm_dir: &str) {
     if !Command::new("make")
         .current_dir(lbm_dir)
-        .env(
-            "MCU_FLAGS",
-            "-mcpu=cortex-m4 -mthumb -mabi=aapcs -mfpu=fpv4-sp-d16 -mfloat-abi=hard",
-        )
+        .env("MCU_FLAGS", "-mcpu=cortex-m4 -mabi=aapcs -mfloat-abi=soft")
         .arg("basic_modem_sx1262")
         .output()
         .unwrap()
